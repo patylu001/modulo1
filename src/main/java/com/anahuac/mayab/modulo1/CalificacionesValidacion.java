@@ -2,6 +2,8 @@ package com.anahuac.mayab.modulo1;
 
 import java.util.Scanner;
 
+//Araceli Chavez
+
 public class CalificacionesValidacion {
 
 	public static void main(String[] args) {
