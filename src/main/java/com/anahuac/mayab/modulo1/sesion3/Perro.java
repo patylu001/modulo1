@@ -1,5 +1,7 @@
 package com.anahuac.mayab.modulo1.sesion3;
 
+import java.io.Serializable;
+
 public class Perro {
 	//variables de instancia o atributos
 	private String raza;
@@ -86,4 +88,8 @@ public class Perro {
 		System.out.println("Me llamo: " + this.nombre + " mi dueño es: " + this.nombreDuenio +  " y Estoy ladrando: gua gua");
 	}
 
+	
+	
+	
+	
 }
