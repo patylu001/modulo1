@@ -12,13 +12,6 @@ public class Perro {
 	public Perro() {
 	}
 	
-	public Perro(String raza, String tamanio, double peso, String nombreDuenio, int edad) {
-		this.raza = raza;
-		this.tamanio = tamanio;
-		this.peso = peso;
-		this.nombreDuenio = nombreDuenio;
-		this.edad = edad;
-	}
 	
 	public Perro(String raza, String tamanio, double peso, String nombre, String nombreDuenio, int edad) {
 		super();
@@ -29,7 +22,9 @@ public class Perro {
 		this.edad = edad;
 		this.nombre = nombre;
 	}
-	
+
+
+
 	public String getRaza() {
 		return raza;
 	}
@@ -70,6 +65,12 @@ public class Perro {
 	
 	public void ladrar() {
 		System.out.println("Me llamo: " + this.nombre + " Mi dueño es: " + this.nombreDuenio + " Estoy ladrando: gua gua");
+	}
+
+	@Override
+	public String toString() {
+		return "Perro [raza=" + raza + ", tamanio=" + tamanio + ", peso=" + peso + ", nombreDuenio=" + nombreDuenio
+				+ ", edad=" + edad + ", nombre=" + nombre + "]";
 	}
 
 }
