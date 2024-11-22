@@ -9,41 +9,50 @@ public class TestPerro {
 
 	public static void main(String[] args) {
 		
-		Perro perro1 = new Perro();
+		Perro perro1 = new Perro("Pug", "Pequeño", 8.5, "Franky", "Laura", 7);
 		Perro perro2 = new Perro("Desconocida", "Pequeño", 10.5, "Firulais", "Pepe", 2);
+		Perro perro3 = new Perro("Pitbull", "Grande", 20, "Grogu", "Ara", 1);
+		Perro perro4 = new Perro("Salchicha", "Pequeño", 4.5, "Ikki", "Ale", 3);
+		Perro perro5 = new Perro("Malish", "Mediana", 15, "Maya", "Diana", 6);
 		
-		System.out.println("El perro1 se llama: " + perro1.getNombre());
+		/*System.out.println("El perro1 se llama: " + perro1.getNombre());
 		System.out.println("El perro 2 se llama: " + perro2.getNombre());
 		
 		perro1.setNombre("Solovino");
-		System.out.println("El nombre del perro1 es: " + perro1.getNombre());
+		System.out.println("El nombre del perro1 es: " + perro1.getNombre());*/
 		
-		System.out.println("El perro ladra: ");
-		perro2.ladrar();
+		/*System.out.println("El perro ladra: ");
+		perro2.ladrar();*/
 		
 		//Arreglo perros
 		
-		Perro[] misPerros = new Perro[10];
+		System.out.println("-----Usando Arreglo Simple-----");
 		
-		String[] nombres = {"Perro1", "Perro2", "Perro3", "Perro4", "Perro5", "Perro6", "Perro7", "Perro8", "Perro9", "Perro10"};
+		Perro[] misPerros = new Perro[5];
 		
-		String[] nombresDuenios = {"Persona1", "Persona2", "Persona3", "Persona4", "Persona5", "Persona6", "Persona7", "Persona8", "Persona9", "Persona10"};
+		String[] nombres = {"Franky", "Firulais", "Grogu", "Ikki", "Maya"};
+		
+		String[] nombresDuenios = {"Laura", "Pepe", "Ara", "Ale", "Diana"};
 		
 		
-		for (int i = 0; i<10; i++) {
+		/*for (int i = 0; i<5; i++) {
 			misPerros[i] = new Perro();
 			misPerros[i].setNombre(nombres[i]);
+			misPerros[i].setNombreDuenio(nombresDuenios[aleatorio]);
+			misPerros[i].ladrar();
 			
 		}
 		
-		for (int i = 0; i<10; i++) {
+		/*for (int i = 0; i<5; i++) {
 			misPerros[i].ladrar();
-		}
+		}*/
 		
 		Random generador = new Random();
 		
-		for (int i=0; i<10; i++) {
-			int aleatorio = generador.nextInt(10);  //nos da un numero aleatorio entre 0 y 10
+		for (int i=0; i<5; i++) {
+			int aleatorio = generador.nextInt(5);  //nos da un numero aleatorio entre 0 y 10
+			misPerros[i] = new Perro();
+			misPerros[i].setNombre(nombres[i]);
 			misPerros[i].setNombreDuenio(nombresDuenios[aleatorio]);
 			misPerros[i].ladrar();
 			
@@ -55,44 +64,45 @@ public class TestPerro {
 		
 		ArrayList<Perro> listaPerros = new ArrayList<Perro>();
 		
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<5; i++) {
 			Perro perroTemporal = new Perro();
 			perroTemporal.setNombre(nombres[i]);
 			
-			int aleatorio = generador.nextInt(10);  //nos da un numero aleatorio entre 0 y 10
+			int aleatorio = generador.nextInt(5);  //nos da un numero aleatorio entre 0 y 10
 			perroTemporal.setNombreDuenio(nombresDuenios[aleatorio]);
 			
 			listaPerros.add(perroTemporal);		
 			
 		}
 		
-		for (int i = 0; i<10; i++) {
+		for (int i = 0; i<5; i++) {
 			listaPerros.get(i).ladrar();
 		}
 		
 		//Busqueda de un perro
 		for(int i=0; i<listaPerros.size(); i++) {
 			String nombre = listaPerros.get(i).getNombre();
-			if (nombre == "Perro6") {
+			if (nombre == "Perro5") {
 				listaPerros.get(i).setNombre("Nuevo nombre del perro");
 				break;
 			}
 		}
 		
-		System.out.println("-----Despues de cambiar el nombre-----");
-		for (int i = 0; i<10; i++) {
+		/*System.out.println("-----Despues de cambiar el nombre-----");
+		for (int i = 0; i<5; i++) {
 			listaPerros.get(i).ladrar();
 		}
 		
 		System.out.println("-----For each-----");
 		for(Perro perro : listaPerros) {
 			perro.ladrar();
-		}
+		}*/
 		
 		System.out.println("-----Usando un hashMap con keyset-----");
+		
 		HashMap<Integer, Perro> mapPerros = new HashMap<>();
 		
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<5; i++) {
 			Perro perroTemporal = new Perro();
 			perroTemporal.setNombre(nombres[i]);
 			
